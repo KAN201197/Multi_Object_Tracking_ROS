@@ -1,0 +1,9 @@
+<launch>
+
+    <!-- Launch the rosbag player -->
+    <node name="rosbag_player" pkg="rosbag" type="play" args="--loop $(find object_tracking_ros)/rosbag/seq_1.bag" output="screen"/>
+  
+    <!-- Launch the object tracking node using kalman filter algorithm-->
+    <node name="object_tracking_ros_node" pkg="object_tracking_ros" type="object_tracking_ros_node" output="screen" />
+
+</launch>
