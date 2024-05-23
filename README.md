@@ -22,7 +22,18 @@ Clone the repository into your catkin workspace and build it:
 
 ```bash
 cd ~/catkin_ws/src
-git clone https://github.com/yourusername/multi_object_tracking_ros.git
+git clone https://github.com/KAN201197/Multi_Object_Tracking_ROS.git
 cd ~/catkin_ws
 catkin_make
 ```
+
+## Usage
+### Running the Object Tracking Node
+
+To launch the object tracking node, use the following command:
+
+```bash
+roslaunch object_tracking_ros object_tracking.launch
+```
+
+
