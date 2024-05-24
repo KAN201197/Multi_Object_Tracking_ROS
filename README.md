@@ -4,6 +4,16 @@
 
 This repository contains a ROS package for multi-object tracking using a Kalman Filter for state estimation and the Hungarian Algorithm for data association. The package uses YOLOv3 for object detection and OpenCV for image processing.
 
+## Dependencies
+
+- ROS Noetic
+- OpenCV
+- Eigen
+- cv_bridge
+- image_transport
+- sensor_msgs
+- std_msgs
+
 ## Installation
 
 ### Prerequisites
@@ -35,5 +45,37 @@ To launch the object tracking node, use the following command:
 ```bash
 roslaunch object_tracking_ros object_tracking.launch
 ```
+## Nodes
+
+### object_tracking_ros_node
+This node subscribes to raw image data, performs object detection using YOLOv3, and tracks the detected objects using a Kalman Filter and Hungarian Algorithm.
+
+**Subscribed Topics**
+
+/me5413/image_raw: The raw image data from the camera.
+
+**Published Topics**
+
+/tracker/info: Information about the tracked objects.
+
+## Configuration File
+
+- **config/yolov3.cfg**: YOLOv3 configuration file.
+- **config/yolov3.weights**: YOLOv3 weights file.
+
+## Code Structure
+### Header File
+- **kalman_filter.hpp**: Defines the KalmanFilter class for Kalman Filter Implementation.
+- **track.hpp**: Defines the Track class for representing individual tracked objects.
+- **track_manager.hpp**: Defines the TrackManager class for managing multiple tracks.
+- **hungarian_algorithm.hpp**: Implementation of the Hungarian Algorithm for solving the assignment problem.
+- **multi_object_tracker.hpp**: Defines the MultiObjectTracker class for handling image data, detecting objects, and tracking them.
+
+### Source Code File
+- **kalman_filter.cpp**: Implementation of the KalmanFilter class.
+- **track.cpp**: Implementation of the Track class.
+- **track_manager.cpp**: Implementation of the TrackManager class.
+- **hungarian_algorithm.cpp**: Implementation of the Hungarian Algorithm.
+- **multi_object_tracker.cpp**: Implementation of the MultiObjectTracker class.
 
 
