@@ -77,5 +77,6 @@ This node subscribes to raw image data, performs object detection using YOLOv3, 
 - **track_manager.cpp**: Implementation of the TrackManager class.
 - **hungarian_algorithm.cpp**: Implementation of the Hungarian Algorithm.
 - **multi_object_tracker.cpp**: Implementation of the MultiObjectTracker class.
+- **main.cpp**: Running the multi objec tracking implementation.
 
 
